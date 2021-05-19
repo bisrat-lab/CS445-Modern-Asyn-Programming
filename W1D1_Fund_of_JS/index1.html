@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
    
     <title>Document</title>
-    <script src="./intro.js"></script>
-</head>
-<body>
+    <!-- defer -> postpone or take it to last without defer -->
+    <script defer src="./intro.js"></script>
     
+</head>
+
+<body>
+   <input type="button" 
+   id="clickMeButton"
+            value = "Click me" 
+            onclick="cilckMe()"/>
+    <div id ="myDiv">
+        name
+    </div>
 </body>
+<script>
+    function cilckMe(){
+    console.log("clicked")
+    }
+    let button  = document.getElementById("clickMeButton");
+    button.onclick = cilckMe;
+
+    document.getElementById("clickMeButton").onclick = function(){
+        document.getElementById("myDiv").innerHTML = "Bisrat Kassa"
+    }
+</script>
+<!-- <script defer src="./intro.js"></script> -->
 </html>

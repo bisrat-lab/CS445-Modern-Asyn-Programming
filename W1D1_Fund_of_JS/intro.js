@@ -1,3 +1,7 @@
+const myArray = [1,2,3]
+const result = myArray.map((item,index)=>item * 2)
+console.log(result)
+
 //function constractor
 function Person(){
     this.name ="Bisrat";
@@ -33,3 +37,14 @@ class Cat extends Animal {
 }
 const cat1 = new Cat("Mewe", 5)
 cat1.print()
+
+function cilckMe(){
+    console.log("clicked")
+    }
+    let button  = document.getElementById("clickMeButton");
+    button.onclick = cilckMe;
+
+    window.onload = function(){
+    let button  = document.getElementById("clickMeButton");
+    button.onclick = cilckMe;
+    }
