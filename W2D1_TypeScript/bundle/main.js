@@ -1,0 +1,1 @@
+(()=>{"use strict";new class{constructor(){console.log("A")}},new class{constructor(){console.log("B")}},new class{constructor(){console.log("M")}}})();
