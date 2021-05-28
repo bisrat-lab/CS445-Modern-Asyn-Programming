@@ -13,13 +13,19 @@ const item: Iitem = {
 
 const aaplyCop = function(i :Iitem){
     return function (discount :number){
-        item.price - (0.1 * item.price)
-      return function (){
-          return `${i.name} price ${discount}`
-      }  
+       const copy ={...i}
+       copy.price = copy.price - (copy.price * 100 / discount)
+          return copy;
+        
     }
 }
-aaplyCop(item)(10).price  ===180 ;
+aaplyCop(item)(10).price===180;
+ const copon = (i:Iitem) => (discount :number) => {
+  const copy ={...i}
+  copy.price = copy.price - (copy.price * 100 / discount)
+     return copy;
+ }
+
 // */
 // const student = (name) => (grade) => `Name: ${name}, Grade: ${grade}`;
 // student("Asaad")(10); // Name: Asaad, Grade: 10
