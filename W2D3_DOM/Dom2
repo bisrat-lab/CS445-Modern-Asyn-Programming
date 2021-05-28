@@ -1,0 +1,36 @@
+DOM (Document Object Modeling)
+--> is the interface between our javascript and HTML/CSS
+
+-->The broweser turns every HTML tags into a javascript object can manapulate. 
+-->Everything is stored inside the Document Object.
+
+DOM Selector
+============
+document.getElementById()
+document.getElementByClassName()
+document.getElementByTagName()
+document.querySelector("#myDiv")
+
+to fix the problem in script tag 
+<script src="./index.html"></script>
+
+==> Defer
+<script defer src="./index.html"></script>
+
+==>Async
+<script async src="./index.html"></script>
+
+Global Object
+Window->document->location->navigator->screen->history
+
+
+
+getElementsByClassName() returns a live HTMLCollection.
+getElementsByTagName() returns a live HTMLCollection.
+getElementsByName() returns a live NodeList.
+querySelectorAll() returns a static NodeList.
+
+
+==> "this" keyword in eventHandler invocke the html element
+
+

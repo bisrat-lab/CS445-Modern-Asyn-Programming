@@ -1,13 +1,13 @@
-let x: number;
-x = 100;
+// let x: number;
+// x = 100;
 
-let str : string
-str =" bisrat";
+// let str : string
+// str =" bisrat";
 
-function add(a: number, b: number) {
-    return a + b;
-   }
-   const sum1: number = add(10,15);
+// function add(a: number, b: number) {
+//     return a + b;
+//    }
+//    const sum1: number = add(10,15);
 
 //1
 function University(name: string, dept: string){
