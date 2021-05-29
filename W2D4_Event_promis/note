@@ -1,12 +1,12 @@
 JavaScript is a single-threaded programming language with a synchronous execution model that processes one operation after another, it can only process one statement at a time.
 
 ==>In V8 we can run only synchronous code.
-Browser => ther is V8 and web API
+Browser => there is V8 and web API
 
-==>Wep API usd to handle Asynchronous code(settimeout)(setInterval)(networkcall)
+==>Wep API used to handle Asynchronous code(settimeout)(setInterval)(networkcall)
 
 Macrotask Queue ==> all the call back functions 
-Event loop =>job is  will take the call back function from Macrotask Queue and try to push to V8.
+==>Event loop =>job is  will take the call back function from Macrotask Queue and try to push to V8.
 
 Create Promise Object
 both resolv and reject are Asynchronous

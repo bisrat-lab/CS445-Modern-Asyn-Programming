@@ -24,26 +24,29 @@ a();
 var b = 5;
 
 /**
+* !Closure
+**A first-class function that binds to free variables that are defined in its execution environment.
  * !Free variable
- * A variable referred to by a function that is not one of its  * parameters or local
- * variables.
+ * *A variable referred to by a function that is not parameters or not local variables
+/**
+ * *Global context(hosting)
+ * x =undefined => 1
+ * f = function
+ * g = undefined 
  */
 /**
- * *Global
- */
-/**
- * *f scope
- * y= undefined 2 10
- * summ = undfinde fn
+ * * f scope
+ * y= undefined => 2 => 10
+ * summ = undfinde => fn
  */
 /**
  * *g scope
  * z = undefined 3
  * 3+10+ 1
  */
-var x = 1;
+var x = 1; //free varable
 function f() {
-  var y = 2;
+  var y = 2; //free varable
   var summ = function () {
     var z = 3;
     console.log(x + y + z);
@@ -54,10 +57,10 @@ function f() {
 var g = f();
 g(); // 14
 
-/**
- * * f EC scope
- * a = undefined 1
- * b= undefined 20
+/**===============================================
+ * * f scope
+ * a = undefined => 1 => 4301
+ * b= undefined => 20
  * c= undefined
  * g=fn
  */
@@ -75,6 +78,7 @@ function f() {
   function g() {
     var b = 300,
       c = 4000;
+
     console.log(a + " " + b + " " + c); // 1 300 4000
     a = a + b + c; //4301
     console.log(a + " " + b + " " + c); // 4301 300 4000
@@ -86,15 +90,15 @@ function f() {
 }
 f();
 
-//
+//====================================================
 /**
  * * Global context scope
- * x = undefined 10
+ * x = undefined => 10
  */
 /**
  * * main scope
- * x = undefined 20 30
- * f = fun
+ * x = undefined => 20 => 30 => 40
+ * f = undefined  => fun
  */
 var x = 10;
 function main() {
@@ -111,14 +115,14 @@ function main() {
     console.log("x5 is " + x); //50
   };
   f(50);
-  console.log("x6 is " + x);
+  console.log("x6 is " + x); //40
 }
 main();
-console.log("x7 is " + x);
+console.log("x7 is " + x); //10
 
-/**
+/**====================================================
  * * Global context scope
- * x = undefined 10
+ * x = undefined => 10 => 20 =>30 => 40
  */
 /**
  * * main scope
@@ -181,9 +185,9 @@ log(5, 10); //  5, 10
 function log(x = 10, y = 5) {
   console.log(x + ", " + y);
 }
-log(); // 10, 5
-log(5); // 5, 5
-log(5, 10); // 5, 10
+log(); //10, 5
+log(5); //5,5
+log(5, 10); //5,10
 
 /**
  * ! Arrow functions ---------------------------------
@@ -195,6 +199,7 @@ const add2 = (a, b) => a + b;
 
 /**
  * ! Higher-order functions ---------------------------------
+ * * A function that takes a function as parament or return a function
  */
 const sum = (x, y) => x + y;
 const calculate = (fn, x, y) => fn(x, y);
@@ -212,28 +217,45 @@ const student2 = function (name) {
   };
 };
 
+const add = (x) => (y) => x + y;
+const addOne = add(1);
+// const add1 = function(y){
+//   return 1 + b;
+// }
+const addFive = add(5);
+addOne(3); //4
+addFive(10); // 15
+
 /**
  * !Destructuring Arrays and Objects
  */
 // Destructuring Array
 const [name, id, website] = ["Asaad", 123, "mum.edu"];
+console.log(id); //123
 // Destructuring Object
 const { width = 100, height = 100 } = { width: 300 };
 
 /**
  * !Rest and Spread Operators (ES6)
+ * *copy the array or copy the object
  */
-
 // Spread Operator
 const technologies = ["Node", "NoSQL", "Angular"];
 const gainedKnowledge = ["MongoDB", "TypeScript", ...technologies];
 
 // Rest Operator
 const family = ["George", "Angel", "Mada", "Asaad", "Mike"];
-const [father, mother, ...children] = family; // fatther ->George mother 'Angel'
+const [father, mother, ...children] = family; // father ->George mother 'Angel'
+//childrnd  gone be Mada", "Asaad", "Mike"
 
 /**
- * !this inside functions--------------------
+ * !this as a Global Context---------------------------
+ * *this refer to some Object
+ * * if we are in the gobal this refer to window
+ * * window obj located in Browser
+ */
+/**
+ * !this inside functions---------------------------
  */
 function func() {
   console.log(this === window);
@@ -249,13 +271,27 @@ console.log(window.firstName); // Asaad
 console.log(window.lastName); // Saad
 
 /**
+ * !this inside Function Constructors------------------
+ */
+function Person(firstName, lastName) {
+  console.log(this); //created empity obj this = {}
+  this.firstName = firstName;
+  console.log(this); // {"firstName":"Asaad"}
+  this.lastName = lastName;
+  console.log(this); // {"firstName":"Asaad","lastName":"Saad"}
+  // return this; implicit
+}
+const person = new Person("Asaad", "Saad");
+
+/**
  * !Invoke a Function Call and apply----------------------
- * * we want to changing the calling obj
+ * * the purpuse we want to changing the calling obj
  */
 function sayHi(msg) {
   console.log(`${msg}, ${this.firstName}!`);
 }
 const person = { firstName: "Asaad" };
+sayHi("Hi"); //hi undefined
 sayHi.call(person, "Yo"); // "Yo, Asaad!"
 sayHi.apply(person, ["Hi"]); // "Hi, Asaad!"
 
@@ -273,15 +309,68 @@ var you = {
 console.log(me.getFullName.apply(you)); // George Saad
 
 /**
- * !Bind is a permanant change 
+ * !Bind is a permanant change
+ * * the purpuse of bind we want to changing the calling obj permamntly
  */
-
+const person = { firstName: "Asaad" };
+function sayHi() {
+  console.log(`Hi, my name is ${this.firstName}!`);
+}
+const greet = sayHi.bind(person);
+greet(); // "Hi, my name is Asaad!"
+greet.call({ firstName: "Mike" }); // "Hi, my name is Asaad!"
 /**
  * !Immutable ---------------------------------------
  */
-const person ={
-    fname: "umer"
+const person = {
+  fname: "umer",
 };
-Object.freeze(person)//now we can not touch but we can read 
-const copyPerson = {...person}; 
-copyPerson.fname ="bisrat";
+Object.freeze(person); //now we can not touch but we can read
+const copyPerson = { ...person };
+copyPerson.fname = "bisrat";
+
+/**
+ * !this within Arrow Functions -------------
+ * *when we use Arrow function there will not be another this keyword uses the closest one 
+ * *when ever we create a function we have another this keyword
+ */
+const counter ={
+    count =0,
+    increment (){
+         setTimeout(()=>console.log(this.count++),100)
+    }
+}
+counter.increment();//1,2,3.....
+const counterF ={
+  count =0,
+  increment(){
+    setTimeout(function(){
+      console.log(this.count++)//NAN
+    },1000)
+  }
+}
+
+//JavaScript Class
+class Person {
+  constructor(firstname, lastname) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+}
+greet() { // will be added to the prototype
+console.log(this.firstname + ' ' + this.lastname);
+}
+}
+
+//Fix me 
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  sayHi() { console.log(`Hi, my name is ${this.firstName}!`); }
+  }
+  const person = new Person("Asaad", "Saad");
+  person.sayHi(); // "Hi, my name is Asaad!"
+  const greet = person.sayHi;
+  //greet(); // cannot read property firstName from undefined 
+  greet.apply(person);
