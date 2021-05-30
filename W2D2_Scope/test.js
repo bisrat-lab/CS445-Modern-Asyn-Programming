@@ -13,17 +13,13 @@
 // }
 // copon(item)(10).price
 
+var excludeWords = ['course','awesome'];
 
-function W(){
-    const todayDate= new Date();
-    const day = todayDate.getDay(); 
-
-    switch (day) {
-        case value:
-            
-            break;
-    
-        default:
-            break;
-    }
-}
+var sentence = "This course is awesome"
+const removeExcludedWords = (str, words) => {
+   let sentence = '';
+   const regex = new RegExp(`\\b(${words.join('|')})\\b`, 'gi');
+   sentence = str.replace(regex, "****");
+   return sentence;
+};
+console.log(removeExcludedWords(sentence, excludeWords));

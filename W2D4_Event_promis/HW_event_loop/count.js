@@ -16,25 +16,33 @@
 //     clearTimeout(timerId); 
 // })
 
-const second = document.querySelector("#sec");
-second.value ="0"
-const stop = document.querySelector("#stop").disabled = true;
+const secInp = document.querySelector("#sec");
+secInp.value ="0"
+const stop = document.querySelector("#stop");
 stop.disabled = true;
-const start = document.querySelector("#start").disabled = true
+const start = document.querySelector("#start");
 start.disabled = true
 
 document.querySelector("#sec").addEventListener('keyup', 
 function(event){
     const newInput = event.target.value;
-    if(parseInt(newInput)>0){
+    if(parseInt(newInput) > 0){
         start.disabled = false;
     }
 })
+let intervalID;
 start.addEventListener('click',function(){
+    intervalID = setInterval(()=> {
+        if(secInp.value ==1){
+            clearInterval(intervalID);
+        }
+        secInp.value-=1
+    },1000)
     start.disabled = true;
     stop.disabled = false;
 })
 
 stop.addEventListener('click',function(){
+    clearInterval(intervalID);
     second.value = "0";
 })
