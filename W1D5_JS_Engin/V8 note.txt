@@ -1,0 +1,66 @@
+
+=> ECMAScript is the standard JS is based on since there are many engines.
+=> ECMA is an organization. A standard that everyone agreed on.
+source code => js engines => byte code,machine code 
+
+=> JS Engine: A program that convert JS code into something that
+computer processor understands, it should follow the ECMAScript
+standard
+
+js engines
+V8 => chrome
+Spide monkey => mozila
+Javascript core => apple
+Chakarcore => Microsoft 
+
+Compilers and Interpreters
+=>similrity both converts higher level programing language to machine code.
+=>compiler will convert the code into machine code (create an exe) before program run.
+=>Interpreters convert code into machine code when the program is run
+==> js do Interpreters language
+==>  in js engines there is Compilers and Interpreters
+---------------------------------------------------------
+But How The JS Engine Works?
+-----------------------------------------------------------
+code => engines =>Parser(does lexical analysis)
+V8 workes
+==>converts javascript code into optimzed machine code 
+
+code => parser(decoding byts,generating token,checking error ) => AST => interpreter(ignition) => byte code 
+
+==>js is have no type and it is dyanmic language
+
+Jit Profiler 
+=> count how many times itis called 
+js File ->Parser -> AST -> Interpreter -> Profiler -> Compiler - > Optimized code -> Machine
+
+Parser 
+The Html Parser will fetch all scripts loaded via <script> tag. The source code inside this script gets loaded as a UTF-16 byte stream to a byte stream decoder. This byte stream decoder then decodes the bytes into token and then its sent to parser. 
+
+AST(Abstract Syntax Tree)
+The parser creates nodes based on the tokens it gets. With these nodes, it creates an Abstract Syntax Tree (AST).
+
+Interpreter-----------------------
+The interpreter walks through the AST and generates byte code. It reads the code line by line. When the byte code has been generated, the AST is deleted for clearing up memory space.
+
+Profiler-----------------------
+The Profiler monitors and watches code to optimize it.
+
+Compiler-------------------------
+The compiler works ahead of time and creates a translation of the code that has been written and compiles down to a lower level language that machines can read.
+------------------------------------------------------
+V8---- 
+Source Code -> Parser -> AST -> interpreter(ignition) -> Bytecode -> TurboFan -> Optimized Machine Code
+------------------------------------------------------
+TurboFan, the optimizing compiler, eventually takes the bytecode and generates optimized machine code from it.
+
+=>The interpreter in v8 is called Ignition. The interpreter generates the byte-code.
+
+--> immutables 
+
+
+CPU vs GPU 
+concurrency
+if we have 1 core but we want to run miltiple task the cpu use time slice technicque.
+* Time slicing -> A short interval of time allotted to each user or program in a multitasking or timesharing system. Time slices are typically in milliseconds
+* The period of time for which a process is allowed to run in a preemptive multitasking system is generally called the time slice or quantum. 

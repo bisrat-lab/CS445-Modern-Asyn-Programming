@@ -1,0 +1,71 @@
+Git -->is virson control system. to track the changes
+working directory --> proj working folder   
+Terminal 
+CD Desktop 
+Create dir 
+Create file with touch 
+Open the file and write somthing and save 
+Create local Repository
+--->git init 
+to view all hidden ls -a  
+Check status --> git status 
+Add the to the staging area 
+---->git add fileName 
+---->to add multipe file use --> git add .
+---->git commit -m "the change" (taking snapshot and making virsion)
+chack by --> git log
+         --->git log --oneline(to view on one line )
+ 
+to add multipe file use --> git add .
+
+--->git diff filename.txr To check the differance with in th file 
+
+--->git checkout filename.txt to return on the previous position  
+-----------------------------------
+vi esc : q
+----------------------------------------------------------------------------------------------------------------
+
+Create New Repository on Gitub Online  
+Copy github Repository
+Open Terminal
+Check the log 
+To Push 
+--> git remote add origin "the link" 
+--> git push -u origin main 
+once you create and to push the updats use 
+--> git push 
+
+
+--------------------------------------------------------
+git init-->git add --> git commit-->git remote add-->git push-->
+--------------------------------------------------------
+create the file 
+-->touch .gitignore 
+--> open .gitignore and write the file name that you want to hide. the file we dont want to take to staging prosses we put in gitignore
+gitignore ==> exclude files
+-------------------------------------------------------
+to remove from the staging area 
+-->git rm --cached -r . 
+--------------------------------------------------------
+****Cloning*** 
+--------------------------------------------------------
+-->git clone "past the link" 
+
+--------------------------------------------------------
+***Branching and Merging***
+--------------------------------------------------------
+HEAD -> master // last commit 
+-->git branch name of the branch
+-->git branch //to check which branch are you
+to switch 
+--> git checkout newbranchname
+--> git merge newbranchname (to merge to master) 
+----------------------------------------------------------
+Forking and pull Request
+--------------------------------------------------------
+fork -->clone -->edit -->push -->pull Request
+
+
+Gitub is a colablaction hosting system, cloud system
+
+

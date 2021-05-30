@@ -1,0 +1,38 @@
+sudo npm i http-server -g
+http-server -o // it will open the live server 
+
+-----------------------------------------------------
+Webpack – Module Bundler
+-----------------------------------------------------
+Bundler --> it combine diffrent js files in to one js file
+for browser compablity 
+npm init -y
+npm i webpack webpack-cli –D (or --save-dev)
+
+==> nmp run
+"scripts": {
+ "build": "webpack ./app.js -o ./dist -w",
+ }, 
+ Run the following command to bundle:
+npm run build
+
+
+---------------------------------------------
+ TypeScript 
+---------------------------------------------
+-> used for write monomorphic function. 
+-> used to prevent bug during compilation 
+-> used for easly optimazition our code 
+-> Object orainted feature.
+1. to start create .ts file 
+==>browser does not understand type Script and we have to convert typescript to Js this prosses called Transpile.
+==>Transpile ==> converting one language to another language 
+
+==> to convert to javascript tsc app.ts
+
+interface extend another interface
+class can inplement to multiple interface
+class can extend from another class 
+class can extend to an abstract class
+
+

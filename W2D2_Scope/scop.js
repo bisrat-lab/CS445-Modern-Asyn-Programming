@@ -326,6 +326,7 @@ const person = {
   fname: "umer",
 };
 Object.freeze(person); //now we can not touch but we can read
+person.a =7 //no no no 
 const copyPerson = { ...person };
 copyPerson.fname = "bisrat";
 

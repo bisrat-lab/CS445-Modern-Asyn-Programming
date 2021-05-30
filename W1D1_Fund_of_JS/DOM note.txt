@@ -1,0 +1,11 @@
+DOM (Document Object Modeling)
+--> is the interface between our javascript and HTML/CSS
+
+-->The broweser turns every HTML tags into a javascript object can manapulate. 
+-->Everything is stored inside the Document Object.
+
+DOM Selector
+============
+document.getElementById()
+document.getElementByClassName()
+document.getElementByTagName()
