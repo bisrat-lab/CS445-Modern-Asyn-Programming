@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button id="b1">Button 1 </button>
+<button id="b2">Button 2 </button>
+<button id="b3">Back </button>
+
+<script>
+    const button1 = document.querySelector('#b1')
+    const button2 = document.querySelector('#b2')
+    const button3 = document.querySelector('#b3')
+
+    button1.addEventListener('click',function(){
+        history.pushState({ page: 1 }, "title 1", "?page=1&name=bisrat");
+        console.log("clicked")
+        button1.classList.add("red");
+    })
+    
+    button2.addEventListener('click', _ => history.pushState({ page: 2 }, "title 2", "?page=2"))
+    button3.addEventListener('click', _ => history.back())
+  
+    window.addEventListener('popstate', function (event) {
+        console.log("state: " + JSON.stringify(event.state))
+    }); 
+</script>
+</body>
+<style>
+    .red{
+        background: red;
+    }
+    .size{
+        font-size: 20px;
+    }
+</style>
+</html>
+
+
