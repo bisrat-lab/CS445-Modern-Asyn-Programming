@@ -1,0 +1,19 @@
+Reactive Programming
+Reactive Programming in JavaScript is like a sequence of events that occur in time. ... It is a programming of event streams that happens in time. RxJS is a JavaScript library for transforming, composing and querying asynchronous streams of data.
+
+Observables: wrapper of same data source
+Subscriptions: connection of The "listening" to the stream 
+Observers:is used to execuite some code when ther is a value,
+==>next()whenver call next method we are adding value to stream
+==>error()
+==>complete()
+
+
+==>A stream is a sequence of ongoing events ordered in time
+==>It can emit
+three different things: a value (of some type), an error, or a completed
+signal.
+
+==>The "listening" to the stream is called subscribing.
+==>The functions we are
+defining are observers.

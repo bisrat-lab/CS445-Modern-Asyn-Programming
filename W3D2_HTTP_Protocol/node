@@ -1,0 +1,31 @@
+IP address 
+=> private cna not con to inetrnet 
+=> public can go to the internet 
+
+NAT => converting private to the public 
+why private: pcs there is not enought Ip address to everyone 
+
+TCP(Transmission control Protocol)
+=>diffrent app run diffrent port 
+
+DNS(Domain name server)
+www.google.com =>  DNS =>  ip(2.2.2.2)
+=> when we go to www.google.com dns convert string to the IP address
+==>when we go to www.google.com first check in the browser catch if it can convert to ip adrees if not go to dns convert string to the IP address.
+
+127.0.0.1 ==> localhost,
+
+HTTP(Hypertext Transport Protocol)
+in odre to commicate 
+==>HTTP is the protocol used to transfer data over the web.
+==>iss the fundamental protocol used for transferring files on the internet
+
+Encryption vs. Hashing=======================
+Encryption ==> using some Algrothim key ==> convert to anather data.
+==> two way the key concert to Encryption to decryption and vis vers 
+
+==>Hashing is one way changing summerization algrothm
+
+==>Symmetric Encryption=> the same key to Encryption and  decryption 
+
+==>Asymmetric Encryption diffrent key to Encryption(public) and  decryption(private).
