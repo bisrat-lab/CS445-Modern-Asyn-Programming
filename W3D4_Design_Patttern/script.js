@@ -60,14 +60,21 @@ console.log("Same instance? " + (instance1 === instance2));
 
 /**
  * !The Observer Pattern
+ * * one to many 
  */
 
 function Subject() {
-  this.observers = [];
+  this.observers = []; //array of functions 
 }
 Subject.prototype = {
   subscribe: function (fn) {
     this.observers.push(fn);
+  },
+  unsubscribe: function(fn){
+    this.observers = this.observers.filter(fn =>{
+        if(fn != fntoRemove)
+        return fn
+    })
   },
   emit: function (msg) {
     this.observers.forEach(function (fn) {
@@ -76,6 +83,7 @@ Subject.prototype = {
   },
 };
 const subject = new Subject();
+
 subject.subscribe(console.log);
 subject.emit("Hello");
 
