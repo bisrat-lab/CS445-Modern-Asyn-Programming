@@ -17,3 +17,9 @@ signal.
 ==>The "listening" to the stream is called subscribing.
 ==>The functions we are
 defining are observers.
+
+Observers are lazy which means if there is no subscribe there is noting to do 
+Some key differences between promises and observable are:
+• Observables handle multiple values over time
+• Observables can be cancelled
+• Observables can be retried

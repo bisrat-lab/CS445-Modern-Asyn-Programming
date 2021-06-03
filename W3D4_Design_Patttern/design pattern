@@ -1,0 +1,31 @@
+Design Pattern: is the way of solving common problem
+==> is resuable solution than can be applied to commonly occurring problems in software
+
+==>use 
+ easily reused 
+ proven solution 
+ expensive 
+
+ Anti-patterns is a bad desig
+ =>do not put everting in one class
+ => using inline sintax 
+
+ Categories Of Design Pattern
+
+ The Prototype Pattern
+ ==>The prototype pattern as one which creates objects based on a
+template of an existing object through cloning.
+
+The Module pattern 
+==> encapsulates private members, state and
+behavior using closures. It provides a way of wrapping a mix of public
+and private methods and variables, protecting pieces from leaking into
+the global scope and accidentally colliding with another developer's
+interface. 
+
+The Singleton Pattern:
+used when you only want a single instance of a class
+
+-----------------------------------------------------
+The Observer Pattern
+=>if somtin happen notify to other classes/ function 
