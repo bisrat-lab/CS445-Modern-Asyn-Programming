@@ -19,7 +19,10 @@
 //  let refreshBtn = document.querySelector("#refresh");
 // refreshBtn.addEventListener('click',()=> window.location.reload())
 
+let refreshBtn = document.querySelector("#refresh");
+      refreshBtn.addEventListener('click',refresh); 
 
+function refresh(){ 
 fetch('https://randomuser.me/api/?results=5')
  .then(response => response.json())
  .then(data => {
@@ -37,6 +40,4 @@ fetch('https://randomuser.me/api/?results=5')
         image[key].src =  value.picture.medium;
      })
  });
-
- let refreshBtn = document.querySelector("#refresh");
-refreshBtn.addEventListener('click',()=> window.location.reload())
+}
