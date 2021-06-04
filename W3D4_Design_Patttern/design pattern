@@ -1,16 +1,27 @@
-Design Pattern: is the way of solving common problem
+Design Pattern: is the way of solving common problems
 ==> is resuable solution than can be applied to commonly occurring problems in software
 
-==>use 
- easily reused 
- proven solution 
- expensive 
+==>The main benefits we get from design patterns are
+ =>Patterns are easily reused 
+ =>Patterns are proven solution they are working 100%  
+ =>Pattern are expressive: Design patterns can explain a large solution quite elegantly.
 
- Anti-patterns is a bad desig
+ Anti-patterns represents bad practice.
+ =>modifying the Object class prototype
  =>do not put everting in one class
  => using inline sintax 
 
- Categories Of Design Pattern
+Categories Of Design Pattern
+=>Creational Design Patterns
+        =>Focus on handling object creation mechanisms 
+        (Module ,Prototype, Singleton,Factory)
+=>Structural Design Patterns
+    These patterns deal with object relationships. They ensure that if one part of a system changes, the entire system doesn’t need to change along with it. 
+    (Decorator,Facade,Proxy)
+=>Behavioral Design Patterns
+    Focus on improving the communication between different objects in a
+    system.
+    (Observer,Strategy)
 
  The Prototype Pattern
  ==>The prototype pattern as one which creates objects based on a
@@ -18,14 +29,23 @@ template of an existing object through cloning.
 
 The Module pattern 
 ==> encapsulates private members, state and
-behavior using closures. It provides a way of wrapping a mix of public
-and private methods and variables, protecting pieces from leaking into
-the global scope and accidentally colliding with another developer's
+behavior using closures.
+ It provides a way of wrapping a mix of public and private methods and variables, protecting pieces from leaking into the global scope and accidentally colliding with another developer's
 interface. 
 
-The Singleton Pattern:
-used when you only want a single instance of a class
 
+
+The Singleton Pattern:
+=>The singleton pattern is used in scenarios when we need exactly one instance of a class.
+=>The Singleton pattern is  it restricts(put limit) instantiation of a class to a single object
 -----------------------------------------------------
 The Observer Pattern
+
 =>if somtin happen notify to other classes/ function 
+the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn’t exist.
+In the event of an instance already existing, it simply returns a reference to that object.
+
+==>Subject
+Maintains a list of observers, facilitates adding or removing observers
+==>Observer
+Provides an update interface for objects that need to be notified of a Subject’s changes of state
