@@ -1,0 +1,27 @@
+Async/Await
+=>it is a syntatic sugar for .then() calls on promises.
+=>The await keyword is only valid inside async functions
+=> it’s wrapped into a promise.
+myPromise().then(() => {
+ console.log("hello");
+});
+await myPromise();
+console.log("hello"); 
+--------------------------------------------
+Design Pattern
+
+=>The Facade Pattern:
+This pattern provides a convenient higher-level interface to a larger body of code, hiding its true underlying complexity.
+
+=>The Factory Pattern:
+The Factory pattern is another creational pattern concerned with the notion of creating objects.  it is not using new operator or via constructor to create Objects. Instead, a Factory can provide a generic interface for creating objects.
+
+==>The Decorator Pattern
+Decorators are a structural design pattern that aim to promote code reuse. 
+=>The ability to add new behavior at runtime is
+accomplished by a Decorator object which wraps around the original
+object. Multiple 
+==> instade of manipulating the origanal Obj create a decrotor function. and it will change the artribute of the Object.and the functionality of the object  
+=>The Strategy Pattern:
+Define a family of algorithms, encapsulate each one, and make them
+interchangeable.
