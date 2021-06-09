@@ -1,29 +1,30 @@
 const { Observable, from, of } = rxjs;
 
 /**
- * ! first way of creating observer
+ * ! first way of creating Observable
  */
-// const obs$ = Observable.create(function (observer){//creating the stream
-//     console.log("before")
-//     observer.next("1")//add some data to the stream
-//     observer.next("2")
-//     observer.complete();
-//    // observer.next({name:"bisrat"})
-// });
-// console.log("after") //1=>
-// obs$.subscribe(//can take 3 parameter
-//     function(data){
-//         console.log(data)
-//     },
-//     function(error){
-//         console.log(error)
-//     },
-//     function(){
-//         console.log("Done")
-// })
-// console.log("End")
+const obs$ = Observable.create(function (observer){//creating the stream
+    console.log("before")
+    observer.next("1")//add some data to the stream
+    observer.next("2")
+    observer.complete();
+   // observer.next({name:"bisrat"})
+});
+console.log("after") //1=>
+obs$.subscribe(//can take 3 parameter function 
+    function(data){
+        console.log(data)
+    },
+    function(error){
+        console.log(error)
+    },
+    function(){
+        console.log("Done")
+})
+console.log("End")
 
 /**
+ * !Creationg Observable from other data sources
  * ! Converting Data Sets to Observables from
  * *from can take array of takes single value
  */
@@ -129,7 +130,7 @@ input$
  **highe order observable
  */
  
-20
+
 const { interval } = rxjs;
 const {  mergeAll, take } = rxjs.operators;
 interval(100) // ms
